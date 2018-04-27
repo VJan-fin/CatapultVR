@@ -43,8 +43,12 @@ public class Hand : MonoBehaviour {
      */
     public void Update()
     {
-        if (Controller.GetHairTriggerDown())
-        {
+        if (collidingObject) {
+            Ball ball = collidingObject.GetComponent<Ball>();
+            if (ball) { manager.Hold(ball); }
+        }
+
+        if (Controller.GetHairTriggerDown()) {
             if (collidingObject)
             {
                 manager.TryGrab();
