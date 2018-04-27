@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControllerGrabObject : MonoBehaviour {
+public class Hand : MonoBehaviour {
 
     // TODO: Declare the tracked and grabbed objects as static dictionaries and check whether both controllers are colliding with the same object prior to grabbing it
     // TODO: Create a fixed joint to only one hand, but constantly check if the two controllers are colliding with the same object, if not then drop the object
@@ -12,11 +12,11 @@ public class ControllerGrabObject : MonoBehaviour {
     // A reference to the object being tracked. In this case, a controller.
     private SteamVR_TrackedObject trackedObj;
     // Stores the GameObject that the trigger is currently colliding with, so the player can grab the object.
-    private GameObject collidingObject;
+    public GameObject collidingObject { get; private set; }
     // Reference to the GameObject that the player is currently grabbing.
-    private GameObject objectInHand;
-
-    private static Dictionary<int, GameObject> collidingObjects = new Dictionary<int, GameObject>();
+    public GameObject objectInHand { get; private set; }
+    private GrabManager manager;
+    public bool isDominantHand;
 
     // A Device property to provide easy access to the controller. 
     // It uses the tracked object’s index to return the controller’s input.
@@ -34,7 +34,8 @@ public class ControllerGrabObject : MonoBehaviour {
     public void Awake()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
-        collidingObjects[(int)trackedObj.index] = null;
+        // if we get an error, move this to Start()
+        manager = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<GrabManager>();
     }
 
     /*
@@ -42,14 +43,11 @@ public class ControllerGrabObject : MonoBehaviour {
      */
     public void Update()
     {
-        LogInputs();
-
         if (Controller.GetHairTriggerDown())
         {
-            Debug.Log("Hair Down");
             if (collidingObject)
             {
-                GrabObject();
+                manager.TryGrab();
             }
         }
 
@@ -57,7 +55,7 @@ public class ControllerGrabObject : MonoBehaviour {
         {
             if (objectInHand)
             {
-                ReleaseObject();
+                manager.Release();
             }
         }
     }
@@ -69,33 +67,25 @@ public class ControllerGrabObject : MonoBehaviour {
     {
         // Doesn’t make the GameObject a potential grab target if the player is already holding something 
         // or the object to be grabbed has no rigidbody.
-        //if (collidingObject || !col.GetComponent<Rigidbody>())
-        //{
-        //    return;
-        //}
-        //collidingObject = col.gameObject;  // Assign the object as a potential grab target.
-        if (collidingObjects[(int)trackedObj.index] || !col.GetComponent<Rigidbody>())
+        if (collidingObject || !col.GetComponent<Rigidbody>())
         {
             return;
         }
-
-        Debug.Log(gameObject.name + " with index " + (int)trackedObj.index + " is picking up an object");
-        collidingObjects[(int)trackedObj.index] = col.gameObject;
+        collidingObject = col.gameObject;  // Assign the object as a potential grab target.
     }
 
-
-    private void GrabObject()
+    public void GrabObject()
     {
-        List<int> keyList = new List<int>(collidingObjects.Keys);
-        if (collidingObjects[keyList[0]].Equals(collidingObjects[keyList[1]]))
-        {
-            objectInHand = collidingObject;  // Move the GameObject inside the player’s hand.
-            collidingObject = null;  // Remove it from the collidingObject variable
+        objectInHand = collidingObject;  // Move the GameObject inside the player’s hand.
+        collidingObject = null;  // Remove it from the collidingObject variable
 
+        if (this.isDominantHand)
+        {
             var joint = AddFixedJoint();
             // Reference to the Rigidbody that the joint is dependent upon.
             joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
         }
+
     }
 
     /* 
@@ -111,9 +101,9 @@ public class ControllerGrabObject : MonoBehaviour {
         return fx;
     }
 
-    private void ReleaseObject()
+    public void ReleaseObject()
     {
-        if (GetComponent<FixedJoint>())  // Make sure there’s a fixed joint attached to the controller.
+        if (this.isDominantHand && GetComponent<FixedJoint>())  // Make sure there’s a fixed joint attached to the controller.
         {
             // Remove the connection to the object held by the joint and destroy the joint.
             GetComponent<FixedJoint>().connectedBody = null;
