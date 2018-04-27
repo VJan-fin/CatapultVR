@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 35845abeca1d64314a8bffc98fa72472
 timeCreated: 1524766011
+=======
+guid: 4419e5e1f72329743b60c3c6ed91e256
+timeCreated: 1524782027
+>>>>>>> origin/Leo
 licenseType: Free
 NativeFormatImporter:
   externalObjects: {}
