@@ -16,6 +16,8 @@ public class ControllerGrabObject : MonoBehaviour {
     // Reference to the GameObject that the player is currently grabbing.
     private GameObject objectInHand;
 
+    private static Dictionary<int, GameObject> collidingObjects = new Dictionary<int, GameObject>();
+
     // A Device property to provide easy access to the controller. 
     // It uses the tracked object’s index to return the controller’s input.
     private SteamVR_Controller.Device Controller
@@ -32,6 +34,7 @@ public class ControllerGrabObject : MonoBehaviour {
     public void Awake()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
+        collidingObjects[(int)trackedObj.index] = null;
     }
 
     /*
@@ -66,22 +69,33 @@ public class ControllerGrabObject : MonoBehaviour {
     {
         // Doesn’t make the GameObject a potential grab target if the player is already holding something 
         // or the object to be grabbed has no rigidbody.
-        if (collidingObject || !col.GetComponent<Rigidbody>())
+        //if (collidingObject || !col.GetComponent<Rigidbody>())
+        //{
+        //    return;
+        //}
+        //collidingObject = col.gameObject;  // Assign the object as a potential grab target.
+        if (collidingObjects[(int)trackedObj.index] || !col.GetComponent<Rigidbody>())
         {
             return;
         }
-        collidingObject = col.gameObject;  // Assign the object as a potential grab target.
+
+        Debug.Log(gameObject.name + " with index " + (int)trackedObj.index + " is picking up an object");
+        collidingObjects[(int)trackedObj.index] = col.gameObject;
     }
 
 
     private void GrabObject()
     {
-        objectInHand = collidingObject;  // Move the GameObject inside the player’s hand.
-        collidingObject = null;  // Remove it from the collidingObject variable
+        List<int> keyList = new List<int>(collidingObjects.Keys);
+        if (collidingObjects[keyList[0]].Equals(collidingObjects[keyList[1]]))
+        {
+            objectInHand = collidingObject;  // Move the GameObject inside the player’s hand.
+            collidingObject = null;  // Remove it from the collidingObject variable
 
-        var joint = AddFixedJoint();
-        // Reference to the Rigidbody that the joint is dependent upon.
-        joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
+            var joint = AddFixedJoint();
+            // Reference to the Rigidbody that the joint is dependent upon.
+            joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
+        }
     }
 
     /* 
