@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: 607f6eea7fca840038007db4473d8cb5
+timeCreated: 1525159813
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: passage-with-borders_Cube_023
+    100004: passage-with-borders_Cube_023_cell
+    100006: passage-with-borders_Cube_023_cell_001
+    100008: passage-with-borders_Cube_023_cell_002
+    100010: passage-with-borders_Cube_023_cell_003
+    100012: passage-with-borders_Cube_023_cell_004
+    100014: passage-with-borders_Cube_023_cell_005
+    100016: passage-with-borders_Cube_023_cell_006
+    100018: passage-with-borders_Cube_023_cell_007
+    100020: passage-with-borders_Cube_023_cell_008
+    100022: passage-with-borders_Cube_023_cell_009
+    100024: passage-with-borders_Cube_023_cell_010
+    100026: passage-with-borders_Cube_023_cell_011
+    100028: passage-with-borders_Cube_023_cell_012
+    100030: passage-with-borders_Cube_023_cell_013
+    100032: passage-with-borders_Cube_023_cell_014
+    100034: passage-with-borders_Cube_023_cell_015
+    100036: passage-with-borders_Cube_023_cell_016
+    400000: //RootNode
+    400002: passage-with-borders_Cube_023
+    400004: passage-with-borders_Cube_023_cell
+    400006: passage-with-borders_Cube_023_cell_001
+    400008: passage-with-borders_Cube_023_cell_002
+    400010: passage-with-borders_Cube_023_cell_003
+    400012: passage-with-borders_Cube_023_cell_004
+    400014: passage-with-borders_Cube_023_cell_005
+    400016: passage-with-borders_Cube_023_cell_006
+    400018: passage-with-borders_Cube_023_cell_007
+    400020: passage-with-borders_Cube_023_cell_008
+    400022: passage-with-borders_Cube_023_cell_009
+    400024: passage-with-borders_Cube_023_cell_010
+    400026: passage-with-borders_Cube_023_cell_011
+    400028: passage-with-borders_Cube_023_cell_012
+    400030: passage-with-borders_Cube_023_cell_013
+    400032: passage-with-borders_Cube_023_cell_014
+    400034: passage-with-borders_Cube_023_cell_015
+    400036: passage-with-borders_Cube_023_cell_016
+    2100000: None
+    2300000: passage-with-borders_Cube_023
+    2300002: passage-with-borders_Cube_023_cell
+    2300004: passage-with-borders_Cube_023_cell_001
+    2300006: passage-with-borders_Cube_023_cell_002
+    2300008: passage-with-borders_Cube_023_cell_003
+    2300010: passage-with-borders_Cube_023_cell_004
+    2300012: passage-with-borders_Cube_023_cell_005
+    2300014: passage-with-borders_Cube_023_cell_006
+    2300016: passage-with-borders_Cube_023_cell_007
+    2300018: passage-with-borders_Cube_023_cell_008
+    2300020: passage-with-borders_Cube_023_cell_009
+    2300022: passage-with-borders_Cube_023_cell_010
+    2300024: passage-with-borders_Cube_023_cell_011
+    2300026: passage-with-borders_Cube_023_cell_012
+    2300028: passage-with-borders_Cube_023_cell_013
+    2300030: passage-with-borders_Cube_023_cell_014
+    2300032: passage-with-borders_Cube_023_cell_015
+    2300034: passage-with-borders_Cube_023_cell_016
+    3300000: passage-with-borders_Cube_023
+    3300002: passage-with-borders_Cube_023_cell
+    3300004: passage-with-borders_Cube_023_cell_001
+    3300006: passage-with-borders_Cube_023_cell_002
+    3300008: passage-with-borders_Cube_023_cell_003
+    3300010: passage-with-borders_Cube_023_cell_004
+    3300012: passage-with-borders_Cube_023_cell_005
+    3300014: passage-with-borders_Cube_023_cell_006
+    3300016: passage-with-borders_Cube_023_cell_007
+    3300018: passage-with-borders_Cube_023_cell_008
+    3300020: passage-with-borders_Cube_023_cell_009
+    3300022: passage-with-borders_Cube_023_cell_010
+    3300024: passage-with-borders_Cube_023_cell_011
+    3300026: passage-with-borders_Cube_023_cell_012
+    3300028: passage-with-borders_Cube_023_cell_013
+    3300030: passage-with-borders_Cube_023_cell_014
+    3300032: passage-with-borders_Cube_023_cell_015
+    3300034: passage-with-borders_Cube_023_cell_016
+    4300000: passage-with-borders_Cube_023_cell_016
+    4300002: passage-with-borders_Cube_023_cell_015
+    4300004: passage-with-borders_Cube_023_cell_014
+    4300006: passage-with-borders_Cube_023_cell_013
+    4300008: passage-with-borders_Cube_023_cell_011
+    4300010: passage-with-borders_Cube_023_cell_012
+    4300012: passage-with-borders_Cube_023_cell_010
+    4300014: passage-with-borders_Cube_023_cell_009
+    4300016: passage-with-borders_Cube_023_cell_008
+    4300018: passage-with-borders_Cube_023_cell_007
+    4300020: passage-with-borders_Cube_023_cell_006
+    4300022: passage-with-borders_Cube_023_cell_005
+    4300024: passage-with-borders_Cube_023_cell_004
+    4300026: passage-with-borders_Cube_023_cell_003
+    4300028: passage-with-borders_Cube_023_cell_002
+    4300030: passage-with-borders_Cube_023_cell_001
+    4300032: passage-with-borders_Cube_023_cell
+    4300034: passage-with-borders_Cube_023
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None
+    second: {fileID: 2100000, guid: b87c74479d767334aab3bfc099120105, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
