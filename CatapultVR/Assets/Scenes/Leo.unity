@@ -161,7 +161,7 @@ Terrain:
   m_GameObject: {fileID: 344770}
   m_Enabled: 1
   serializedVersion: 3
-  m_TerrainData: {fileID: 15600000, guid: 580dba0dfe5e2fd409366d7f349b2717, type: 2}
+  m_TerrainData: {fileID: 0}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
@@ -211,7 +211,7 @@ Transform:
   m_Children:
   - {fileID: 344771}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &473346830
 GameObject:
@@ -338,7 +338,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &660942022
 GameObject:
@@ -508,6 +508,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 805803232}
+--- !u!114 &1412339961 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114875672686651836, guid: ec49718556ca37440a1e2819c52a24b9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1568780152}
+  m_Script: {fileID: 11500000, guid: 9bd8c9261bd40f04bb4a08a4d8c5481a, type: 3}
 --- !u!1001 &1568780152
 Prefab:
   m_ObjectHideFlags: 0
@@ -547,15 +553,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4473173482963680, guid: ec49718556ca37440a1e2819c52a24b9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 25.591
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec49718556ca37440a1e2819c52a24b9, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1649476626 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114699174537152006, guid: ec49718556ca37440a1e2819c52a24b9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1568780152}
-  m_Script: {fileID: 11500000, guid: 9bd8c9261bd40f04bb4a08a4d8c5481a, type: 3}
 --- !u!1 &1694041530
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,11 +635,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1694041530}
   m_LocalRotation: {x: 0.23512277, y: -0.11671892, z: 0.028453, w: 0.9645126}
-  m_LocalPosition: {x: 25.1, y: 5.4, z: 18.6}
+  m_LocalPosition: {x: 15.9, y: 4.1, z: 20.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 27.4, y: -13.8, z: 0}
 --- !u!1001 &1906503124
 Prefab:
@@ -646,15 +650,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4677281139500702, guid: 3bab96c2f1ab68346920139dd9b4a7ea, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 25.382
+      value: 11.22
       objectReference: {fileID: 0}
     - target: {fileID: 4677281139500702, guid: 3bab96c2f1ab68346920139dd9b4a7ea, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.128
+      value: 1.749
       objectReference: {fileID: 0}
     - target: {fileID: 4677281139500702, guid: 3bab96c2f1ab68346920139dd9b4a7ea, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 21.42
+      value: 23.4
       objectReference: {fileID: 0}
     - target: {fileID: 4677281139500702, guid: 3bab96c2f1ab68346920139dd9b4a7ea, type: 2}
       propertyPath: m_LocalRotation.x
@@ -755,7 +759,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1649476626}
+      - m_Target: {fileID: 1412339961}
         m_MethodName: Fire
         m_Mode: 1
         m_Arguments:

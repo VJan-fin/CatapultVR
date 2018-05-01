@@ -5,6 +5,7 @@ using UnityEngine;
 public class BallHolder : MonoBehaviour {
 
     public Ball held { get; private set; }
+	public float upModifier = 0.3f;
 
 	// Use this for initialization
 	void Start () {
@@ -18,10 +19,13 @@ public class BallHolder : MonoBehaviour {
 
     public void Center(Hand left, Hand right)
     {
-        this.transform.position = 0.5f * (left.transform.position + right.transform.position);
+		// TODO Verify that up is the good direction
+		this.transform.position = this.upModifier * transform.up +
+			0.5f * (left.transform.position + right.transform.position);
     }
 
-    public void HoldBall(Ball ball) {
+    public void HoldBall(Ball ball) 
+	{
         if (this.held)
         {
             return;
@@ -31,6 +35,23 @@ public class BallHolder : MonoBehaviour {
         joint.connectedBody = ball.GetComponent<Rigidbody>();
     }
 
+	public void DropBall()
+	{
+		if (!this.held) 
+		{
+			return;	
+		}
+		FixedJoint[] fxs = GetComponents<FixedJoint> ();
+		if (fxs != null) 
+		{
+			foreach (FixedJoint fx in fxs)
+			{
+				fx.connectedBody = null;
+				Destroy (fx);
+			}
+		}
+		held = null;
+	}
 
     private FixedJoint AddFixedJoint()
     {

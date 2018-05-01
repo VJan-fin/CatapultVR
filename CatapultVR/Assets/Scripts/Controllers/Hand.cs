@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour {
 
-    // TODO: Declare the tracked and grabbed objects as static dictionaries and check whether both controllers are colliding with the same object prior to grabbing it
-    // TODO: Create a fixed joint to only one hand, but constantly check if the two controllers are colliding with the same object, if not then drop the object
-    // maybe not necessary to do the following - colliders should be sufficient
-    // TODO: The selectable objects need to implement an interface that will calculate their diameter so that it is clear when the two controllers are close enough
-
     // A reference to the object being tracked. In this case, a controller.
     private SteamVR_TrackedObject trackedObj;
     // Stores the GameObject that the trigger is currently colliding with, so the player can grab the object.
@@ -16,7 +11,6 @@ public class Hand : MonoBehaviour {
     // Reference to the GameObject that the player is currently grabbing.
     public GameObject objectInHand { get; private set; }
     private GrabManager manager;
-    public bool isDominantHand;
 
     // A Device property to provide easy access to the controller. 
     // It uses the tracked object’s index to return the controller’s input.
@@ -37,31 +31,41 @@ public class Hand : MonoBehaviour {
         // if we get an error, move this to Start()
         manager = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<GrabManager>();
     }
-
-    /*
-     * Update is called every frame.
-     */
-    public void Update()
+		
+    public void FixedUpdate()
     {
-        if (collidingObject) {
-            Ball ball = collidingObject.GetComponent<Ball>();
-            if (ball) { manager.Hold(ball); }
-        }
-
-        if (Controller.GetHairTriggerDown()) {
-            if (collidingObject)
-            {
-                manager.TryGrab();
-            }
-        }
-
-        if (Controller.GetHairTriggerUp())
-        {
-            if (objectInHand)
-            {
-                manager.Release();
-            }
-        }
+		if (objectInHand) 
+		{
+			// If the hand was holding an object
+			if (objectInHand.GetComponent<Ball> ()) 
+			{
+				// If that object was a ball
+				if (!collidingObject) 
+				{
+					manager.ReleaseBall ();
+				}
+			} else { 
+				if(Controller.GetHairTriggerUp())
+				{
+					// The reason why this logic is not handled in this class is:
+					// If we want to have other objects than the ball that are two-handed,
+					// We still don't handle this case, but just for later.
+					manager.ReleaseObject(this, objectInHand);
+				}
+			}
+		}  else if (collidingObject)
+		{
+			// If the hand encounters an object
+			if (collidingObject.GetComponent<Ball>()) 
+			{
+				// If that object is a ball
+				manager.GrabBall ();
+			} else if(Controller.GetHairTriggerDown()) 
+			{
+				// Same reason as for ReleaseObject
+				manager.GrabObject(this, collidingObject);
+			}
+		}
     }
 
     /* 
@@ -78,18 +82,18 @@ public class Hand : MonoBehaviour {
         collidingObject = col.gameObject;  // Assign the object as a potential grab target.
     }
 
-    public void GrabObject()
+	public void Grab(GameObject obj)
     {
-        objectInHand = collidingObject;  // Move the GameObject inside the player’s hand.
-        collidingObject = null;  // Remove it from the collidingObject variable
+        objectInHand = obj;  // Move the GameObject inside the player’s hand.
+        // TODO: not sure if we should actually keep this line.
+		// collidingObject = null;  // Remove it from the collidingObject variable
 
-        if (this.isDominantHand)
+		if (! obj.GetComponent<Ball>())
         {
             var joint = AddFixedJoint();
             // Reference to the Rigidbody that the joint is dependent upon.
             joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
         }
-
     }
 
     /* 
@@ -105,19 +109,28 @@ public class Hand : MonoBehaviour {
         return fx;
     }
 
-    public void ReleaseObject()
+    public void Release()
     {
-        if (this.isDominantHand && GetComponent<FixedJoint>())  // Make sure there’s a fixed joint attached to the controller.
-        {
-            // Remove the connection to the object held by the joint and destroy the joint.
-            GetComponent<FixedJoint>().connectedBody = null;
-            Destroy(GetComponent<FixedJoint>());
+		// Delete all fixed joints with the body
+		FixedJoint[] fxs = GetComponents<FixedJoint> ();
+		if (fxs != null) 
+		{
+			foreach (FixedJoint fx in fxs)
+			{
+				fx.connectedBody = null;
+				Destroy (fx);
+			}
+		}
 
-            // Add the speed and rotation of the controller when the player releases the object, 
-            // so the result is a realistic arc.
-            objectInHand.GetComponent<Rigidbody>().velocity = Controller.velocity;
-            objectInHand.GetComponent<Rigidbody>().angularVelocity = Controller.angularVelocity;
-        }
+		// Apply movement to the body
+		Rigidbody objectBody = objectInHand.GetComponent<Rigidbody> ();
+		if (objectBody) 
+		{
+			objectBody.velocity = Controller.velocity;
+			objectBody.angularVelocity = Controller.angularVelocity;
+		}
+
+		// Free the hand
         objectInHand = null;
     }
 
