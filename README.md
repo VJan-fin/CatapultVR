@@ -51,3 +51,5 @@ similar to what is done in the TP.
 Our intention is to use Unity 3D and some proprietary or open-source software depending on
 the hardware.
 
+## 4. Credits
+- Use the hands from [3DHaupt](https://www.blendswap.com/blends/view/66039)
