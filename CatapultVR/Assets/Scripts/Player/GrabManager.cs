@@ -32,7 +32,8 @@ public class GrabManager : MonoBehaviour {
 
 	public void ReleaseBall() 
 	{
-		// TODO: Do some checks to verify that hands are far apart
+        // TODO: Do some checks to verify that hands are far apart
+        Debug.Log(name + "being asked to release ball");
 		ballHolder.DropBall ();
 		left.Release ();
 		right.Release ();

@@ -39,9 +39,11 @@ public class Hand : MonoBehaviour {
 			// If the hand was holding an object
 			if (objectInHand.GetComponent<Ball> ()) 
 			{
+                Debug.Log("is holding hand" + gameObject.name);
 				// If that object was a ball
-				if (!collidingObject) 
+				if (!collidingObject || !collidingObject.GetComponent<Ball>()) 
 				{
+                    Debug.Log(name + "hand not touching ball anymore");
 					manager.ReleaseBall ();
 				}
 			} else { 
