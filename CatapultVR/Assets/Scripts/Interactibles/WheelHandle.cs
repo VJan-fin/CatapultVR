@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class WheelHandle : MonoBehaviour {
 
+	Vector3 savedPosition;
+
     Vector3 initialPositon;
+	Quaternion initialRotation;
     float distanceToAxel;
 
-    private Transform wheelTransform;
+	public Transform wheelTransform;
 
     public Transform axelTransform;
     private Vector3 axelPosition;
@@ -17,42 +20,51 @@ public class WheelHandle : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        initialPositon = transform.position;
-        axelPosition = axelTransform.position;
+		savedPosition = transform.position;
+		initialPositon = transform.localPosition;
+		initialRotation = transform.localRotation;
+		axelPosition = axelTransform.localPosition;
         axelToInitialPosition = initialPositon - axelPosition;
         distanceToAxel = axelToInitialPosition.magnitude;
         body = GetComponent<Rigidbody>();
-        wheelTransform = GetComponentInParent<Transform>();
+		
+
+		Debug.Log ("initialPosition: " + initialPositon);
+		Debug.Log ("axelPosition: " + axelPosition);
+		Debug.Log ("axelToInitialPosition: " + axelToInitialPosition);
+		Debug.Log ("distanceToAxel: " + distanceToAxel);
+
     }
 	
-	// Update is called once per frame
+//	// Update is called once per frame
 	void Update () {
-        RestrictMovement();
+		
         float angle = GetAngle();
+
         RotateWheel(angle);
+		RestrictMovement ();
+
+		Debug.Log (angle);
     }
 
     float GetAngle() {
-        Vector3 currentPosition = transform.position;
+		Vector3 currentPosition = transform.localPosition;
+		currentPosition.y = initialPositon.y;
+
         Vector3 axelToCurrentPosition = currentPosition - axelPosition;
-        float magnitude = axelToCurrentPosition.magnitude;
-        axelToCurrentPosition = axelToCurrentPosition / magnitude;
-        Vector3 newPosition = axelPosition + axelToCurrentPosition * distanceToAxel;
-        newPosition.y = initialPositon.y;
-        axelToCurrentPosition = newPosition - axelPosition;
-        float angle = Vector3.SignedAngle(axelToInitialPosition, axelToCurrentPosition, wheelTransform.up);
+
+        float angle = Vector3.SignedAngle(axelToInitialPosition, axelToCurrentPosition, axelTransform.up);
         //this.transform.position = newPosition;
-        Debug.Log(angle);
         return angle;
     }
 
     void RotateWheel(float angle) {
         Quaternion newRotation = Quaternion.Euler(0, angle, 0);
-        wheelTransform.rotation = wheelTransform.rotation * newRotation;
+		wheelTransform.Rotate (new Vector3(0, angle, 0));
     } 
 
     void RestrictMovement() {
-        body.velocity /= 2.0f;
-        body.angularDrag /= 2.0f;
+		transform.localPosition = initialPositon;
+		transform.localRotation = initialRotation;
     }
 }
