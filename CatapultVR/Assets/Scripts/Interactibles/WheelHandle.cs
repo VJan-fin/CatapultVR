@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class WheelHandle : MonoBehaviour {
 
-	Vector3 savedPosition;
-
     Vector3 initialPositon;
 	Quaternion initialRotation;
     float distanceToAxel;
@@ -16,23 +14,20 @@ public class WheelHandle : MonoBehaviour {
     private Vector3 axelPosition;
     private Vector3 axelToInitialPosition;
 
+    public float speedFactor;
+    public AimController catapult;
+
     Rigidbody body;
 
 	// Use this for initialization
 	void Start () {
-		savedPosition = transform.position;
 		initialPositon = transform.localPosition;
 		initialRotation = transform.localRotation;
 		axelPosition = axelTransform.localPosition;
         axelToInitialPosition = initialPositon - axelPosition;
         distanceToAxel = axelToInitialPosition.magnitude;
         body = GetComponent<Rigidbody>();
-		
-
-		Debug.Log ("initialPosition: " + initialPositon);
-		Debug.Log ("axelPosition: " + axelPosition);
-		Debug.Log ("axelToInitialPosition: " + axelToInitialPosition);
-		Debug.Log ("distanceToAxel: " + distanceToAxel);
+        speedFactor = 0.3f;
 
     }
 	
@@ -42,9 +37,8 @@ public class WheelHandle : MonoBehaviour {
         float angle = GetAngle();
 
         RotateWheel(angle);
+        RotateCatapult(angle);
 		RestrictMovement ();
-
-		Debug.Log (angle);
     }
 
     float GetAngle() {
@@ -55,13 +49,18 @@ public class WheelHandle : MonoBehaviour {
 
         float angle = Vector3.SignedAngle(axelToInitialPosition, axelToCurrentPosition, axelTransform.up);
         //this.transform.position = newPosition;
-        return angle;
+        
+        return angle * speedFactor;
     }
 
     void RotateWheel(float angle) {
-        Quaternion newRotation = Quaternion.Euler(0, angle, 0);
 		wheelTransform.Rotate (new Vector3(0, angle, 0));
-    } 
+    }
+
+    private void RotateCatapult(float angle) {
+        catapult.Rotate(angle);
+    }
+
 
     void RestrictMovement() {
 		transform.localPosition = initialPositon;

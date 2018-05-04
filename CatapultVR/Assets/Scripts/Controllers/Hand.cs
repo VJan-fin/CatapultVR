@@ -11,6 +11,7 @@ public class Hand : MonoBehaviour {
     // Reference to the GameObject that the player is currently grabbing.
     public GameObject objectInHand { get; private set; }
     private GrabManager manager;
+    public float grappingDistance;
 
     // A Device property to provide easy access to the controller. 
     // It uses the tracked object’s index to return the controller’s input.
@@ -31,6 +32,10 @@ public class Hand : MonoBehaviour {
         // if we get an error, move this to Start()
         manager = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<GrabManager>();
     }
+
+    public void Start() {
+        grappingDistance = 0.2f;
+    }
 		
     public void FixedUpdate()
     {
@@ -46,14 +51,23 @@ public class Hand : MonoBehaviour {
                     Debug.Log(name + "hand not touching ball anymore");
 					manager.ReleaseBall ();
 				}
-			} else { 
-				if(Controller.GetHairTriggerUp())
-				{
-					// The reason why this logic is not handled in this class is:
-					// If we want to have other objects than the ball that are two-handed,
-					// We still don't handle this case, but just for later.
-					manager.ReleaseObject(this, objectInHand);
-				}
+			} else {
+                if (Controller.GetHairTriggerUp())
+                {
+                    // The reason why this logic is not handled in this class is:
+                    // If we want to have other objects than the ball that are two-handed,
+                    // We still don't handle this case, but just for later.
+                    manager.ReleaseObject(this, objectInHand);
+                }
+                else {
+                    Vector3 toObject = objectInHand.transform.position - transform.position;
+                    float distanceToObject = toObject.magnitude;
+                    //Debug.Log(name + distanceToObject);
+                    if (distanceToObject > grappingDistance && !collidingObject) {
+                        Debug.Log("Should Release");
+                        manager.ReleaseObject(this, objectInHand);
+                    }
+                }
 			}
 		}  else if (collidingObject)
 		{
