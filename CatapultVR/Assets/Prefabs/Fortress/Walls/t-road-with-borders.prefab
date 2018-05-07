@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33357006515704034}
   - component: {fileID: 23406184520257588}
   - component: {fileID: 64392336147269038}
+  - component: {fileID: 54852666551089688}
   m_Layer: 0
   m_Name: t-road-with-borders_Cube_113_cell_013
   m_TagString: Untagged
@@ -40,6 +41,7 @@ GameObject:
   - component: {fileID: 33132700130347318}
   - component: {fileID: 23947104791283814}
   - component: {fileID: 64455157819931842}
+  - component: {fileID: 54306868126404094}
   m_Layer: 0
   m_Name: t-road-with-borders_Cube_113_cell_006
   m_TagString: Untagged
@@ -77,6 +79,7 @@ GameObject:
   - component: {fileID: 33261994014631302}
   - component: {fileID: 23886127371812076}
   - component: {fileID: 64414389632992350}
+  - component: {fileID: 54267807260822090}
   m_Layer: 0
   m_Name: t-road-with-borders_Cube_113_cell_010
   m_TagString: Untagged
@@ -110,6 +113,7 @@ GameObject:
   - component: {fileID: 33812838070913910}
   - component: {fileID: 23856067423739176}
   - component: {fileID: 64876769420530226}
+  - component: {fileID: 54441519994043098}
   m_Layer: 0
   m_Name: t-road-with-borders_Cube_113_cell_004
   m_TagString: Untagged
@@ -128,6 +132,7 @@ GameObject:
   - component: {fileID: 33335875517792826}
   - component: {fileID: 23850708520172206}
   - component: {fileID: 64527369445845286}
+  - component: {fileID: 54930528067411724}
   m_Layer: 0
   m_Name: t-road-with-borders_Cube_113_cell_014
   m_TagString: Untagged
@@ -146,6 +151,7 @@ GameObject:
   - component: {fileID: 33453919557954718}
   - component: {fileID: 23519788176728022}
   - component: {fileID: 64474186871969308}
+  - component: {fileID: 54297675469575292}
   m_Layer: 0
   m_Name: t-road-with-borders_Cube_113_cell_008
   m_TagString: Untagged
@@ -164,6 +170,7 @@ GameObject:
   - component: {fileID: 33383709707440346}
   - component: {fileID: 23169725929041326}
   - component: {fileID: 64499827255477704}
+  - component: {fileID: 54185887783949892}
   m_Layer: 0
   m_Name: t-road-with-borders_Cube_113_cell_001
   m_TagString: Untagged
@@ -182,6 +189,7 @@ GameObject:
   - component: {fileID: 33013774814652294}
   - component: {fileID: 23099277498205524}
   - component: {fileID: 64526246498163180}
+  - component: {fileID: 54516010385710820}
   m_Layer: 0
   m_Name: t-road-with-borders_Cube_113_cell_012
   m_TagString: Untagged
@@ -200,6 +208,7 @@ GameObject:
   - component: {fileID: 33611962123226264}
   - component: {fileID: 23372647739007318}
   - component: {fileID: 64965297708075552}
+  - component: {fileID: 54719750386066102}
   m_Layer: 0
   m_Name: t-road-with-borders_Cube_113_cell_002
   m_TagString: Untagged
@@ -235,6 +244,7 @@ GameObject:
   - component: {fileID: 33639257864119746}
   - component: {fileID: 23633785602144732}
   - component: {fileID: 64892731933982466}
+  - component: {fileID: 54644121432219158}
   m_Layer: 0
   m_Name: t-road-with-borders_Cube_113_cell_005
   m_TagString: Untagged
@@ -253,6 +263,7 @@ GameObject:
   - component: {fileID: 33513510555684034}
   - component: {fileID: 23212355645796842}
   - component: {fileID: 64333946753248842}
+  - component: {fileID: 54672408673609600}
   m_Layer: 0
   m_Name: t-road-with-borders_Cube_113_cell_007
   m_TagString: Untagged
@@ -271,6 +282,7 @@ GameObject:
   - component: {fileID: 33901680004801150}
   - component: {fileID: 23998642867248432}
   - component: {fileID: 64284415544338278}
+  - component: {fileID: 54390799065726616}
   m_Layer: 0
   m_Name: t-road-with-borders_Cube_113_cell_003
   m_TagString: Untagged
@@ -289,6 +301,7 @@ GameObject:
   - component: {fileID: 33459858136520778}
   - component: {fileID: 23446296438085998}
   - component: {fileID: 64382895284721276}
+  - component: {fileID: 54882123314989750}
   m_Layer: 0
   m_Name: t-road-with-borders_Cube_113_cell_011
   m_TagString: Untagged
@@ -307,6 +320,7 @@ GameObject:
   - component: {fileID: 33566606962997050}
   - component: {fileID: 23507003939525508}
   - component: {fileID: 64518004760778500}
+  - component: {fileID: 54052564639246608}
   m_Layer: 0
   m_Name: t-road-with-borders_Cube_113_cell_009
   m_TagString: Untagged
@@ -325,6 +339,7 @@ GameObject:
   - component: {fileID: 33552673544258636}
   - component: {fileID: 23734836583834366}
   - component: {fileID: 64116110139948414}
+  - component: {fileID: 54822205830946246}
   m_Layer: 0
   m_Name: t-road-with-borders_Cube_113_cell
   m_TagString: Untagged
@@ -390,15 +405,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1174564115408040}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -12.165, y: -0.5, z: 44.195}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 10.960009, y: -0.49999988, z: -0.18000984}
+  m_LocalScale: {x: 1.0000017, y: 1, z: 1.0000017}
   m_Children:
   - {fileID: 4403572137913262}
   - {fileID: 4617411810889518}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4479185792534592
 Transform:
   m_ObjectHideFlags: 1
@@ -1246,6 +1261,171 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1775661278426078}
   m_Mesh: {fileID: 4300022, guid: 0d1948991959f4ef2b5410121f43ea53, type: 3}
+--- !u!54 &54052564639246608
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1809516936183572}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54185887783949892
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524189648689460}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54267807260822090
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1180371059937218}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54297675469575292
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1512320054768184}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54306868126404094
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1090760631148038}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54390799065726616
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1775661278426078}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54441519994043098
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1392119156476372}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54516010385710820
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1607035901415550}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54644121432219158
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1707495923195970}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54672408673609600
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1758649357556206}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54719750386066102
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1646432596190692}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!54 &54807004362419430
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1253,7 +1433,67 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1174564115408040}
   serializedVersion: 2
-  m_Mass: 100
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54822205830946246
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1824844992589212}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54852666551089688
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1005770326260440}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54882123314989750
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1800078539704556}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54930528067411724
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1414936091020088}
+  serializedVersion: 2
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1481,8 +1721,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.788348, y: 9.480196, z: 6.970225}
-  m_Center: {x: 0.98385787, y: 2.1513953, z: -0.10286806}
+  m_Size: {x: 5.0497637, y: 9.437749, z: 5.997306}
+  m_Center: {x: 0.6039092, y: 2.1726189, z: 0.061855547}
 --- !u!95 &95742822916538460
 Animator:
   serializedVersion: 3
