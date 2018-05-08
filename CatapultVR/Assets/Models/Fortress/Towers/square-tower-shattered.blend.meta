@@ -1,0 +1,212 @@
+fileFormatVersion: 2
+guid: 634ff922072894c58ac9772b6cedc321
+timeCreated: 1525616711
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: square-tower_Cube_006
+    100004: square-tower_Cube_006_cell_000
+    100006: square-tower_Cube_006_cell_001
+    100008: square-tower_Cube_006_cell_002
+    100010: square-tower_Cube_006_cell_003
+    100012: square-tower_Cube_006_cell_004
+    100014: square-tower_Cube_006_cell_005
+    100016: square-tower_Cube_006_cell_006
+    100018: square-tower_Cube_006_cell_007
+    100020: square-tower_Cube_006_cell_008
+    100022: square-tower_Cube_006_cell_009
+    100024: square-tower_Cube_006_cell_010
+    100026: square-tower_Cube_006_cell_011
+    100028: square-tower_Cube_006_cell_012
+    100030: square-tower_Cube_006_cell_013
+    100032: square-tower_Cube_006_cell_014
+    100034: square-tower_Cube_006_cell_015
+    100036: square-tower_Cube_006_cell_016
+    100038: square-tower_Cube_006_cell_017
+    100040: square-tower_Cube_006_cell_018
+    100042: square-tower_Cube_006_cell_019
+    100044: square-tower_Cube_006_cell_020
+    100046: square-tower_Cube_006_cell_021
+    100048: square-tower_Cube_006_cell_022
+    400000: //RootNode
+    400002: square-tower_Cube_006
+    400004: square-tower_Cube_006_cell_000
+    400006: square-tower_Cube_006_cell_001
+    400008: square-tower_Cube_006_cell_002
+    400010: square-tower_Cube_006_cell_003
+    400012: square-tower_Cube_006_cell_004
+    400014: square-tower_Cube_006_cell_005
+    400016: square-tower_Cube_006_cell_006
+    400018: square-tower_Cube_006_cell_007
+    400020: square-tower_Cube_006_cell_008
+    400022: square-tower_Cube_006_cell_009
+    400024: square-tower_Cube_006_cell_010
+    400026: square-tower_Cube_006_cell_011
+    400028: square-tower_Cube_006_cell_012
+    400030: square-tower_Cube_006_cell_013
+    400032: square-tower_Cube_006_cell_014
+    400034: square-tower_Cube_006_cell_015
+    400036: square-tower_Cube_006_cell_016
+    400038: square-tower_Cube_006_cell_017
+    400040: square-tower_Cube_006_cell_018
+    400042: square-tower_Cube_006_cell_019
+    400044: square-tower_Cube_006_cell_020
+    400046: square-tower_Cube_006_cell_021
+    400048: square-tower_Cube_006_cell_022
+    2100000: None
+    2300000: square-tower_Cube_006
+    2300002: square-tower_Cube_006_cell_000
+    2300004: square-tower_Cube_006_cell_001
+    2300006: square-tower_Cube_006_cell_002
+    2300008: square-tower_Cube_006_cell_003
+    2300010: square-tower_Cube_006_cell_004
+    2300012: square-tower_Cube_006_cell_005
+    2300014: square-tower_Cube_006_cell_006
+    2300016: square-tower_Cube_006_cell_007
+    2300018: square-tower_Cube_006_cell_008
+    2300020: square-tower_Cube_006_cell_009
+    2300022: square-tower_Cube_006_cell_010
+    2300024: square-tower_Cube_006_cell_011
+    2300026: square-tower_Cube_006_cell_012
+    2300028: square-tower_Cube_006_cell_013
+    2300030: square-tower_Cube_006_cell_014
+    2300032: square-tower_Cube_006_cell_015
+    2300034: square-tower_Cube_006_cell_016
+    2300036: square-tower_Cube_006_cell_017
+    2300038: square-tower_Cube_006_cell_018
+    2300040: square-tower_Cube_006_cell_019
+    2300042: square-tower_Cube_006_cell_020
+    2300044: square-tower_Cube_006_cell_021
+    2300046: square-tower_Cube_006_cell_022
+    3300000: square-tower_Cube_006
+    3300002: square-tower_Cube_006_cell_000
+    3300004: square-tower_Cube_006_cell_001
+    3300006: square-tower_Cube_006_cell_002
+    3300008: square-tower_Cube_006_cell_003
+    3300010: square-tower_Cube_006_cell_004
+    3300012: square-tower_Cube_006_cell_005
+    3300014: square-tower_Cube_006_cell_006
+    3300016: square-tower_Cube_006_cell_007
+    3300018: square-tower_Cube_006_cell_008
+    3300020: square-tower_Cube_006_cell_009
+    3300022: square-tower_Cube_006_cell_010
+    3300024: square-tower_Cube_006_cell_011
+    3300026: square-tower_Cube_006_cell_012
+    3300028: square-tower_Cube_006_cell_013
+    3300030: square-tower_Cube_006_cell_014
+    3300032: square-tower_Cube_006_cell_015
+    3300034: square-tower_Cube_006_cell_016
+    3300036: square-tower_Cube_006_cell_017
+    3300038: square-tower_Cube_006_cell_018
+    3300040: square-tower_Cube_006_cell_019
+    3300042: square-tower_Cube_006_cell_020
+    3300044: square-tower_Cube_006_cell_021
+    3300046: square-tower_Cube_006_cell_022
+    4300000: square-tower_Cube_006_cell_022
+    4300002: square-tower_Cube_006_cell_021
+    4300004: square-tower_Cube_006_cell_020
+    4300006: square-tower_Cube_006_cell_019
+    4300008: square-tower_Cube_006_cell_018
+    4300010: square-tower_Cube_006_cell_017
+    4300012: square-tower_Cube_006_cell_000
+    4300014: square-tower_Cube_006_cell_016
+    4300016: square-tower_Cube_006_cell_015
+    4300018: square-tower_Cube_006_cell_014
+    4300020: square-tower_Cube_006_cell_013
+    4300022: square-tower_Cube_006_cell_012
+    4300024: square-tower_Cube_006_cell_011
+    4300026: square-tower_Cube_006_cell_010
+    4300028: square-tower_Cube_006_cell_009
+    4300030: square-tower_Cube_006_cell_008
+    4300032: square-tower_Cube_006_cell_007
+    4300034: square-tower_Cube_006_cell_006
+    4300036: square-tower_Cube_006_cell_005
+    4300038: square-tower_Cube_006_cell_004
+    4300040: square-tower_Cube_006_cell_003
+    4300042: square-tower_Cube_006_cell_002
+    4300044: square-tower_Cube_006_cell_001
+    4300046: square-tower_Cube_006
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

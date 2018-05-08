@@ -22,7 +22,7 @@ public class SpoonController : MonoBehaviour {
 			Rigidbody ballBody = spoon.held.GetComponent<Rigidbody>();
 			if (ballBody) {
 				Vector3 direction = (transform.forward + transform.up).normalized;
-				ballBody.AddForce (direction * 1000.0f);
+				ballBody.AddForce (direction * 800.0f);
 			}
 		}
 	}
