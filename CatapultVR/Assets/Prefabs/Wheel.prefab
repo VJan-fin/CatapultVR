@@ -286,7 +286,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: d81c173ae2ea9474b8b3f49cfd3494ee, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -450,5 +450,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheelTransform: {fileID: 4798051192099032}
   axelTransform: {fileID: 4425072527803884}
-  speedFactor: 0.3
+  speedFactor: 0
   catapult: {fileID: 0}
