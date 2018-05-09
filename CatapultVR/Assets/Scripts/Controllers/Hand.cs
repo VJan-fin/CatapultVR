@@ -10,6 +10,7 @@ public class Hand : MonoBehaviour {
     public GameObject collidingObject { get; private set; }
     // Reference to the GameObject that the player is currently grabbing.
     public GameObject objectInHand { get; private set; }
+    public float trackpadY { get; private set; }
     private GrabManager manager;
     public float grappingDistance;
 
@@ -36,22 +37,32 @@ public class Hand : MonoBehaviour {
     public void Start() {
         grappingDistance = 0.2f;
     }
-		
+
+
+
     public void FixedUpdate()
     {
-		if (objectInHand) 
-		{
-			// If the hand was holding an object
-			if (objectInHand.GetComponent<Ball> ()) 
-			{
+        HandleCollisions();
+        HandleScaling();
+    }
+
+    private void HandleCollisions()
+    {
+        if (objectInHand)
+        {
+            // If the hand was holding an object
+            if (objectInHand.GetComponent<Ball>())
+            {
                 Debug.Log("is holding hand" + gameObject.name);
-				// If that object was a ball
-				if (!collidingObject || !collidingObject.GetComponent<Ball>()) 
-				{
+                // If that object was a ball
+                if (!collidingObject || !collidingObject.GetComponent<Ball>())
+                {
                     Debug.Log(name + "hand not touching ball anymore");
-					manager.ReleaseBall ();
-				}
-			} else {
+                    manager.ReleaseBall();
+                }
+            }
+            else
+            {
                 if (Controller.GetHairTriggerUp())
                 {
                     // The reason why this logic is not handled in this class is:
@@ -59,29 +70,47 @@ public class Hand : MonoBehaviour {
                     // We still don't handle this case, but just for later.
                     manager.ReleaseObject(this, objectInHand);
                 }
-                else {
+                else
+                {
                     Vector3 toObject = objectInHand.transform.position - transform.position;
                     float distanceToObject = toObject.magnitude;
                     //Debug.Log(name + distanceToObject);
-                    if (distanceToObject > grappingDistance && !collidingObject) {
+                    if (distanceToObject > grappingDistance && !collidingObject)
+                    {
                         Debug.Log("Should Release");
                         manager.ReleaseObject(this, objectInHand);
                     }
                 }
-			}
-		}  else if (collidingObject)
-		{
-			// If the hand encounters an object
-			if (collidingObject.GetComponent<Ball>()) 
-			{
-				// If that object is a ball
-				manager.GrabBall ();
-			} else if(Controller.GetHairTriggerDown()) 
-			{
-				// Same reason as for ReleaseObject
-				manager.GrabObject(this, collidingObject);
-			}
-		}
+            }
+        }
+        else if (collidingObject)
+        {
+            // If the hand encounters an object
+            if (collidingObject.GetComponent<Ball>())
+            {
+                // If that object is a ball
+                manager.GrabBall();
+            }
+            else if (Controller.GetHairTriggerDown())
+            {
+                // Same reason as for ReleaseObject
+                manager.GrabObject(this, collidingObject);
+            }
+        }
+    }
+
+    private void HandleScaling()
+    {
+        trackpadY = 0.0f;
+        Vector2 axis = Controller.GetAxis();
+        if (axis != Vector2.zero)
+        {
+            float y = axis.y;
+            if(Mathf.Abs(y) > 0.1)
+            {
+                trackpadY = y;
+            }
+        }
     }
 
     /* 

@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class GrabManager : MonoBehaviour {
 
-    public Hand left, right;
+    ControllerManager controllers;
+    Hand left, right;
     private BallHolder ballHolder;
 
 	// Use this for initialization
 	void Start () {
+        controllers = GetComponent<ControllerManager>();
+        left = controllers.left;
+        right = controllers.right;
         ballHolder = GetComponentInChildren<BallHolder>();
 	}
 	
