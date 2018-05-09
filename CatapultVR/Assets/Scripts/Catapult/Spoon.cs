@@ -6,26 +6,50 @@ public class Spoon : MonoBehaviour {
 
 	public Ball held { get; private set;}
 	private BoxCollider[] boxColliders;
+	float initialYAngle;
 
 
 	public void Start(){
 		boxColliders = GetComponents<BoxCollider>();
+		initialYAngle = CurrentYAngle ();
 	}
 
 	public void Shoot(){
+		StopCoroutine (RotateHandleInverse ());
 		StartCoroutine (RotateHandle ());
 		DisableBoxColliders ();
+	}
+
+	public void Reset(){
+		StopCoroutine (RotateHandle ());
+		StartCoroutine (RotateHandleInverse ());
+		EnableBoxColliders ();
+	}
+
+	public void info(){
+		Debug.Log (CurrentYAngle ());
 	}
 
 	IEnumerator RotateHandle() {
 		float moveSpeed = 0.01f;
 		// TODO check if there is a better way to check angles
-		while (CurrentYAngle() < 360) {
+		while (CurrentYAngle() < 357) {
 			// Debug.Log ("in while: " + currentYAngle());
-			transform.localRotation = Quaternion.Slerp (transform.localRotation, Quaternion.Euler (0, 360, 0), moveSpeed * Time.time);
+			transform.localRotation = Quaternion.Slerp (transform.localRotation, Quaternion.Euler (0, 359, 0), moveSpeed * Time.time);
 			yield return null;
 		}
-		transform.localRotation = Quaternion.Euler (0, 360, 0);
+		transform.localRotation = Quaternion.Euler (0, 359, 0);
+		yield return null;
+	}
+
+	IEnumerator RotateHandleInverse() {
+		float moveSpeed = 0.01f;
+		// TODO check if there is a better way to check angles
+		while (CurrentYAngle() > initialYAngle + 1) {
+			transform.localRotation = Quaternion.Slerp (transform.localRotation, Quaternion.Euler (0, initialYAngle, 0), moveSpeed * Time.time);
+			yield return null;
+		}
+		transform.localRotation = Quaternion.Euler (0, initialYAngle, 0);
 		yield return null;
 	}
 
@@ -54,7 +78,6 @@ public class Spoon : MonoBehaviour {
 		Ball ball = other.GetComponent<Ball>();
 		if (ball && !held) {
 			held = ball;
-			Debug.Log("new held ball");
 		}
 	}
 
@@ -63,7 +86,6 @@ public class Spoon : MonoBehaviour {
 		Ball ball = other.GetComponent<Ball>();
 		if (ball && !held) {
 			held = ball;
-			Debug.Log ("held a staying ball");
 		}
 	}
 
@@ -72,7 +94,6 @@ public class Spoon : MonoBehaviour {
 		Ball ball = other.GetComponent<Ball>();
 		if (held && held == ball) {
 			held = null;
-			Debug.Log("Ball exited");
 		}
 	}
 }
