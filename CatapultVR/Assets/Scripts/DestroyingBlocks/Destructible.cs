@@ -25,7 +25,7 @@ public class Destructible : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
 	{
-        if (collision.gameObject.name == "Ball")
+        if (collision.gameObject.tag == "CannonBall")
         {
             this.Explode();
             this.Destruct();
@@ -41,8 +41,8 @@ public class Destructible : MonoBehaviour {
 
         // Show effect
         GameObject ps = Instantiate(explosionEffect, transform.position, transform.rotation);
-        //this.GetComponent<Rigidbody>().isKinematic = false;
-        //this.GetComponent<Rigidbody>().AddExplosionForce(700f, transform.position, 5f);
+        //objRigidBody.isKinematic = false;
+        //objRigidBody.AddExplosionForce(700f, transform.position, 5f);
 
         // Destroy the particle system after it executes the effect
         Destroy(ps, ps.GetComponent<ParticleSystem>().main.duration);
