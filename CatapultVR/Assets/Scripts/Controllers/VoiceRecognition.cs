@@ -8,6 +8,7 @@ public class VoiceRecognition : MonoBehaviour {
     // maps voice command key phrases to an action (method name)
     private Dictionary<string, string> keywordActions = new Dictionary<string, string>();
     private KeywordRecognizer recognizer;
+	private VoiceManager player;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,7 @@ public class VoiceRecognition : MonoBehaviour {
         this.recognizer = new KeywordRecognizer(this.keywordActions.Keys.ToArray());
         this.recognizer.OnPhraseRecognized += OnPhraseRecognizesHandler;
         this.recognizer.Start();
+		player = GameObject.FindGameObjectWithTag ("PlayerManager").GetComponent<VoiceManager> ();
     }
 
     private void OnPhraseRecognizesHandler(PhraseRecognizedEventArgs args)
@@ -23,19 +25,27 @@ public class VoiceRecognition : MonoBehaviour {
         Debug.Log("Command issued: " + args.text + " with confidence: " + args.confidence);
         Invoke(this.keywordActions[args.text], 0);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     void FillKeywords () {
-        this.keywordActions.Add("Ball", "SpawnBall");
-        this.keywordActions.Add("Square", "SpawnBall");
-        this.keywordActions.Add("Spawn ball", "SpawnBall");
-    }
+		this.keywordActions.Add ("Ready Catapult", "ReadyCatapult");
+		this.keywordActions.Add ("Fire", "PrepareFire");
+		this.keywordActions.Add ("Grow Catapult", "GrowCatapult");
+		this.keywordActions.Add ("Shrink Catapult", "ShrinkCatapult");
+	}
 
-    void SpawnBall () {
-        Debug.Log("Ball created");
-    }
+	void ReadyCatapult() {
+		player.ReadyCatapult ();
+	}
+
+	void PrepareFire() {
+		player.PrepareFire ();
+	}
+
+	void GrowCatapult(){
+		player.GrowCatapult ();
+	}
+
+	void ShrinkCatapult(){
+		player.ShrinkCatapult ();
+	}
 }

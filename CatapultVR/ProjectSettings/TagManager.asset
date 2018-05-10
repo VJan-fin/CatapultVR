@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerManager
   - CannonBall
+  - Catapult
   layers:
   - Default
   - TransparentFX
