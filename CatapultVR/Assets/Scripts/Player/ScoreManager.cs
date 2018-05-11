@@ -15,7 +15,7 @@ public class ScoreManager : MonoBehaviour {
 
 	public void Destroyed(Destructible destructible)
     {
-        score += 1;
+        score += 100;
         scoreMesh.text = score.ToString();
     }
 }

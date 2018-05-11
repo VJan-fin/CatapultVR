@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd8c9261bd40f04bb4a08a4d8c5481a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firepower: 1750
+  firepower: 2000
 --- !u!135 &135866369465029596
 SphereCollider:
   m_ObjectHideFlags: 1
