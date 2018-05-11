@@ -39,10 +39,10 @@ public class VoiceManager : MonoBehaviour {
 		float rightY = controllers.right.transform.localPosition.y;
 
 		if (leftY > rightY) {
-			hand = leftY;
+			hand = controllers.left;
 			handPosition = controllers.left.transform.localPosition;
 		} else {
-			hand = rightY;
+			hand = controllers.right;
 			handPosition = controllers.right.transform.localPosition;
 		}
 		waitingForFire = true;
@@ -61,7 +61,7 @@ public class VoiceManager : MonoBehaviour {
 	}
 
 	public void ShrinkCatapult(){
-		catapultSize.Grow (0.9);
+		catapultSize.Grow (0.9f);
 	}
 
 
