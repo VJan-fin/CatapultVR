@@ -28,6 +28,7 @@ public class SizeController : MonoBehaviour {
         transform.localPosition = initialPosition + (move * transform.right);
 
 		if (ball) {
+            Debug.Log(name + "keeping ball in place");
 			ball.transform.position = ballHolder.position;
 		}
 	}

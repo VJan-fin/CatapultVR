@@ -13,19 +13,16 @@ public class Destructible : MonoBehaviour {
     public float vanishingTime = 3.0f;
     public float vanishingDelay = 7.5f;
 
+    ScoreManager scoreManager;
+
 	// Use this for initialization
 	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+        scoreManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManager>();
 	}
 
     private void OnCollisionEnter(Collision collision)
 	{
-        if (collision.gameObject.tag == "CannonBall")
+        if (collision.gameObject.GetComponent<Ball>())
         {
             this.Explode();
             this.Destruct();
@@ -50,6 +47,7 @@ public class Destructible : MonoBehaviour {
 
     private void Destruct()
     {
+        scoreManager.Destroyed(this);
         objRigidBody.isKinematic = true;
         objBoxCollider.enabled = false;
         wholeObj.SetActive(false);
