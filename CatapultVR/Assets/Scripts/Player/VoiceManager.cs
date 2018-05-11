@@ -5,6 +5,7 @@ using UnityEngine;
 public class VoiceManager : MonoBehaviour {
 
 	public float launchDifference = 1.0f;
+    public FireIndicator indicator;
 
 	SpoonController catapult;
 	SizeController catapultSize;
@@ -18,6 +19,7 @@ public class VoiceManager : MonoBehaviour {
 		catapult = GameObject.FindGameObjectWithTag ("Catapult").GetComponent<SpoonController> ();
 		catapultSize = GameObject.FindGameObjectWithTag ("Catapult").GetComponent<SizeController> ();
 		waitingForFire = false;
+        indicator.NotReadyToFire();
 		handPosition = Vector3.zero;
 		controllers = GetComponent<ControllerManager> ();
 		hand = controllers.right;
@@ -31,7 +33,8 @@ public class VoiceManager : MonoBehaviour {
 
 	public void ReadyCatapult() {
 		waitingForFire = false;
-		catapult.Reset ();
+        indicator.NotReadyToFire();
+        catapult.Reset ();
 	}
 
 	public void PrepareFire() {
@@ -46,13 +49,15 @@ public class VoiceManager : MonoBehaviour {
 			handPosition = controllers.right.transform.localPosition;
 		}
 		waitingForFire = true;
+        indicator.ReadyToFire();
 	}
 
 	private void HandleFire() {
 		float handY = hand.transform.localPosition.y;
 		if (handY < handPosition.y - launchDifference) {
 			waitingForFire = false;
-			catapult.Fire ();
+            indicator.NotReadyToFire();
+            catapult.Fire ();
 		}
 	}
 

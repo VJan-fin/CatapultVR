@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114498357977515372}
   - component: {fileID: 114682389732357820}
   - component: {fileID: 114391391764630422}
+  - component: {fileID: 114808936807485338}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: PlayerManager
@@ -66,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990418049800998}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40.029, y: -1.5586095, z: 45.76}
+  m_LocalPosition: {x: 0.651001, y: 0.28139067, z: -4.330002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4328799710574994}
@@ -125,6 +126,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   catapultSize: {fileID: 0}
   scaleFactor: 0.01
+--- !u!114 &114808936807485338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1990418049800998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e868c8829dc5f8f44a112297ff2f96a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchDifference: 1
+  indicator: {fileID: 0}
 --- !u!114 &114963216055521502
 MonoBehaviour:
   m_ObjectHideFlags: 1
