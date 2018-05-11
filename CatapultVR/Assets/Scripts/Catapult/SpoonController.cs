@@ -29,9 +29,20 @@ public class SpoonController : MonoBehaviour {
 				Vector3 direction = (transform.forward + transform.up).normalized;
 				float fp = firepower * sizeController.scale;
 				ballBody.AddForce (direction * fp);
+                Respawn(ballBody);
 			}
 		}
         GetComponent<Rigidbody>().isKinematic = false;
+    }
+
+    private void Respawn(Rigidbody body)
+    {
+        Ball ball = body.GetComponent<Ball>();
+        if (ball)
+        {
+            BallSpawner spawner = ball.spawner;
+            spawner.SpawnBall();
+        }
     }
 
 	public void Reset() {
