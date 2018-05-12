@@ -9,6 +9,7 @@ public class Destructible : MonoBehaviour {
     public BoxCollider objBoxCollider;
     public GameObject wholeObj;
     public GameObject pieces;
+    public AudioSource explosionSoundEffect;
 
     public float vanishingTime = 3.0f;
     public float vanishingDelay = 7.5f;
@@ -38,6 +39,7 @@ public class Destructible : MonoBehaviour {
 
         // Show effect
         GameObject ps = Instantiate(explosionEffect, transform.position, transform.rotation);
+        explosionSoundEffect.Play();
         //objRigidBody.isKinematic = false;
         //objRigidBody.AddExplosionForce(700f, transform.position, 5f);
 
