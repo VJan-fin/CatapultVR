@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 360b1e0e4660b3042aa7538cffc4f8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitRadius: 3
   spawner: {fileID: 0}
 --- !u!135 &135222127529920994
 SphereCollider:
