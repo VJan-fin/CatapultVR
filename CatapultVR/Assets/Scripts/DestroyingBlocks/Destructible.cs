@@ -26,22 +26,31 @@ public class Destructible : MonoBehaviour {
         if (collision.gameObject.GetComponent<Ball>())
         {
             this.Explode();
-            this.Destruct();
-            this.Vanish();
+            this.PerformDestructionAction();
+            float destructionRadius = collision.gameObject.GetComponent<Ball>().hitRadius;
+
+            Collider[] neighbours = Physics.OverlapSphere(transform.position, destructionRadius);
+            foreach (Collider neighbour in neighbours) 
+            {
+                if (neighbour.GetComponent<Destructible>())
+                {
+                    neighbour.GetComponent<Destructible>().PerformDestructionAction();
+                }
+            }
         }
 	}
 
+    public void PerformDestructionAction() 
+    {
+        this.Destruct();
+        this.Vanish();
+    }
+
     private void Explode()
     {
-        // Make isKinematic true for all objects which prevents them from interacting with each other and blowing up
-        // When collision is detected on a particular object, detect other objects in proximity (within a radius) -> see YouTube tutorial
-        // enable isKinematic and apply forces to blow things up
-
         // Show effect
         GameObject ps = Instantiate(explosionEffect, transform.position, transform.rotation);
         explosionSoundEffect.Play();
-        //objRigidBody.isKinematic = false;
-        //objRigidBody.AddExplosionForce(700f, transform.position, 5f);
 
         // Destroy the particle system after it executes the effect
         Destroy(ps, ps.GetComponent<ParticleSystem>().main.duration);

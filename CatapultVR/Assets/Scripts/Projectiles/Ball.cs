@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
+    public float hitRadius = 1.0f;
+
     public BallSpawner spawner = null;
     
 }
