@@ -31,6 +31,7 @@ public class VoiceRecognition : MonoBehaviour {
 		this.keywordActions.Add ("Fire", "PrepareFire");
 		this.keywordActions.Add ("Grow Catapult", "GrowCatapult");
 		this.keywordActions.Add ("Shrink Catapult", "ShrinkCatapult");
+        this.keywordActions.Add ("Explode", "ExplodeCannonBall");
 	}
 
 	void ReadyCatapult() {
@@ -48,4 +49,13 @@ public class VoiceRecognition : MonoBehaviour {
 	void ShrinkCatapult(){
 		player.ShrinkCatapult ();
 	}
+
+    void ExplodeCannonBall() 
+    {
+        var cannonBalls = FindObjectsOfType<Ball>();
+        foreach (var cannonBall in cannonBalls)
+        {
+            cannonBall.Explode();
+        }
+    }
 }

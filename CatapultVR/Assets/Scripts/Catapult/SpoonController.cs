@@ -34,6 +34,7 @@ public class SpoonController : MonoBehaviour {
 				Vector3 direction = (transform.forward + transform.up).normalized;
 				float fp = firepower * sizeController.scale;
 				ballBody.AddForce (direction * fp);
+                spoon.held.GetComponent<Ball>().MarkAsThrown();
                 Respawn(ballBody);
 			}
 		}

@@ -21,32 +21,13 @@ public class Destructible : MonoBehaviour {
         scoreManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManager>();
 	}
 
-    private void OnCollisionEnter(Collision collision)
-	{
-        if (collision.gameObject.GetComponent<Ball>())
-        {
-            this.Explode();
-            this.PerformDestructionAction();
-            float destructionRadius = collision.gameObject.GetComponent<Ball>().hitRadius;
-
-            Collider[] neighbours = Physics.OverlapSphere(transform.position, destructionRadius);
-            foreach (Collider neighbour in neighbours) 
-            {
-                if (neighbour.GetComponent<Destructible>())
-                {
-                    neighbour.GetComponent<Destructible>().PerformDestructionAction();
-                }
-            }
-        }
-	}
-
     public void PerformDestructionAction() 
     {
         this.Destruct();
         this.Vanish();
     }
 
-    private void Explode()
+    public void Explode()
     {
         // Show effect
         GameObject ps = Instantiate(explosionEffect, transform.position, transform.rotation);
