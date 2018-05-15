@@ -23,7 +23,8 @@ public class LavaBall : Ball
         {
             this.ExplosionEffect();
             this.CrashNeighbouringDestructibles();
-            Destroy(gameObject, 3.0f);
+            //Destroy(gameObject, 3.0f);
+            this.SelfDestroy(3.0f);
         }
     }
 

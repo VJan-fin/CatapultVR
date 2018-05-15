@@ -34,5 +34,10 @@ public class Ball : MonoBehaviour {
             }
         }
     }
+
+    public void SelfDestroy(float timeDelay)
+    {
+        Destroy(gameObject, timeDelay);
+    }
     
 }

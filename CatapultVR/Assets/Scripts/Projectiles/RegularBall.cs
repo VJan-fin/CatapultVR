@@ -18,7 +18,8 @@ public class RegularBall : Ball {
             destructible.PerformDestructionAction();
 
             this.CrashNeighbouringDestructibles();
-            Destroy(gameObject, 7.5f);
+            //Destroy(gameObject, 7.5f);
+            this.SelfDestroy(7.5f);
         }
     }
     
