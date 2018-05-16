@@ -7,6 +7,7 @@ public class GrabManager : MonoBehaviour {
     ControllerManager controllers;
     Hand left, right;
     private BallHolder ballHolder;
+    
 
 	// Use this for initialization
 	void Start () {

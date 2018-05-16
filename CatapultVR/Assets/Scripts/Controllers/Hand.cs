@@ -44,6 +44,7 @@ public class Hand : MonoBehaviour {
     {
         HandleCollisions();
         HandleScaling();
+        
     }
 
     private void HandleCollisions()
@@ -109,7 +110,7 @@ public class Hand : MonoBehaviour {
             }
         }
     }
-
+    
     /* 
      * When the trigger collider enters another, this sets up the other collider as a potential grab target.
      */

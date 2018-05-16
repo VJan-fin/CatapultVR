@@ -70,5 +70,29 @@ public class VoiceManager : MonoBehaviour {
 		catapultSize.Grow (0.9f);
 	}
 
+    public void ExplodeCannonBall()
+    {
+        var cannonBalls = FindObjectsOfType<Ball>();
+        foreach (var cannonBall in cannonBalls)
+        {
+            cannonBall.Explode();
+        }
+    }
+
+    public void ResetCannonballs()
+    {
+        //Debug.Log("Reset Cannon Balls called");
+        var cannonBalls = FindObjectsOfType<Ball>();
+        foreach (var cannonBall in cannonBalls)
+        {
+            cannonBall.SelfDestroy(0);
+        }
+
+        var ballSpawners = FindObjectsOfType<BallSpawner>();
+        foreach (var ballSpawner in ballSpawners)
+        {
+            ballSpawner.SpawnBall();
+        }
+    }
 
 }

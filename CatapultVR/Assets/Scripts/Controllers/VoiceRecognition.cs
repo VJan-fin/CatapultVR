@@ -53,25 +53,11 @@ public class VoiceRecognition : MonoBehaviour {
 
     public void ExplodeCannonBall() 
     {
-        var cannonBalls = FindObjectsOfType<Ball>();
-        foreach (var cannonBall in cannonBalls)
-        {
-            cannonBall.Explode();
-        }
+        player.ExplodeCannonBall();
     }
 
     public void ResetCannonballs()
     {
-        var cannonBalls = FindObjectsOfType<Ball>();
-        foreach (var cannonBall in cannonBalls)
-        {
-            cannonBall.SelfDestroy(0);
-        }
-
-        var ballSpawners = FindObjectsOfType<BallSpawner>();
-        foreach (var ballSpawner in ballSpawners)
-        {
-            ballSpawner.SpawnBall();
-        }
+        player.ResetCannonballs();
     }
 }
