@@ -9,7 +9,7 @@ public class VoiceManager : MonoBehaviour {
 
 	SpoonController catapult;
 	SizeController catapultSize;
-	ControllerManager controllers;
+	public ControllerManager controllers;
 	bool waitingForFire;
 	Hand hand;
 	Vector3 handPosition;
@@ -21,7 +21,8 @@ public class VoiceManager : MonoBehaviour {
 		waitingForFire = false;
         indicator.NotReadyToFire();
 		handPosition = Vector3.zero;
-		controllers = GetComponent<ControllerManager> ();
+		//controllers = GetComponent<ControllerManager> ();
+        Debug.Log(name + controllers == null);
 		hand = controllers.right;
 	}
 
