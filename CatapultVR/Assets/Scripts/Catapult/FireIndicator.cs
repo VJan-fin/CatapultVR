@@ -7,22 +7,22 @@ public class FireIndicator : MonoBehaviour {
     public Material canFire;
     public Material cannotFire;
 
-    Renderer renderer;
+    Renderer cannonRenderer;
 
     // Use this for initialization
     void Start () {
-        renderer = GetComponent<Renderer>();
-        renderer.material = cannotFire;
+        cannonRenderer = GetComponent<Renderer>();
+        cannonRenderer.material = cannotFire;
 	}
 
     public void ReadyToFire()
     {
-        renderer.material = canFire;
+        cannonRenderer.material = canFire;
     }
 
     public void NotReadyToFire()
     {
-        renderer.material = cannotFire;
+        cannonRenderer.material = cannotFire;
     }
 	
 }

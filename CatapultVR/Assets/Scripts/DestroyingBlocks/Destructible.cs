@@ -9,6 +9,7 @@ public class Destructible : MonoBehaviour {
     public BoxCollider objBoxCollider;
     public GameObject wholeObj;
     public GameObject pieces;
+    public AudioSource explosionSoundEffect;
 
     public float vanishingTime = 3.0f;
     public float vanishingDelay = 7.5f;
@@ -20,26 +21,17 @@ public class Destructible : MonoBehaviour {
         scoreManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManager>();
 	}
 
-    private void OnCollisionEnter(Collision collision)
-	{
-        if (collision.gameObject.GetComponent<Ball>())
-        {
-            this.Explode();
-            this.Destruct();
-            this.Vanish();
-        }
-	}
-
-    private void Explode()
+    public void PerformDestructionAction() 
     {
-        // Make isKinematic true for all objects which prevents them from interacting with each other and blowing up
-        // When collision is detected on a particular object, detect other objects in proximity (within a radius) -> see YouTube tutorial
-        // enable isKinematic and apply forces to blow things up
+        this.Destruct();
+        this.Vanish();
+    }
 
+    public void Explode()
+    {
         // Show effect
         GameObject ps = Instantiate(explosionEffect, transform.position, transform.rotation);
-        //objRigidBody.isKinematic = false;
-        //objRigidBody.AddExplosionForce(700f, transform.position, 5f);
+        explosionSoundEffect.Play();
 
         // Destroy the particle system after it executes the effect
         Destroy(ps, ps.GetComponent<ParticleSystem>().main.duration);

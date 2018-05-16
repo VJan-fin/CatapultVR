@@ -5,8 +5,11 @@ using UnityEngine;
 public class SpoonController : MonoBehaviour {
 
 	public float firepower = 800.0f;
+    public AudioSource fireSoundEffect;
+    public AudioSource resetSoundEffect;
+
 	Spoon spoon;
-	SizeController sizeController;
+    SizeController sizeController;
 
 
 	// Use this for initialization
@@ -21,6 +24,8 @@ public class SpoonController : MonoBehaviour {
 	}
 
 	public void Fire(){
+        fireSoundEffect.Play();
+
         GetComponent<Rigidbody>().isKinematic = true;
 		this.spoon.Shoot();
 		if (spoon.held) {
@@ -29,6 +34,7 @@ public class SpoonController : MonoBehaviour {
 				Vector3 direction = (transform.forward + transform.up).normalized;
 				float fp = firepower * sizeController.scale;
 				ballBody.AddForce (direction * fp);
+                spoon.held.GetComponent<Ball>().MarkAsThrown();
                 Respawn(ballBody);
 			}
 		}
@@ -46,6 +52,8 @@ public class SpoonController : MonoBehaviour {
     }
 
 	public void Reset() {
+        resetSoundEffect.Play();
+
 		this.spoon.Reset ();
 	}
 }
