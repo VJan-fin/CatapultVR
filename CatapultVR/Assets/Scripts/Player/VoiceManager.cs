@@ -14,6 +14,8 @@ public class VoiceManager : MonoBehaviour {
 	Hand hand;
 	Vector3 handPosition;
 
+	TimeManager timekeeper;
+
 
 	public void Start() {
 		catapult = GameObject.FindGameObjectWithTag ("Catapult").GetComponent<SpoonController> ();
@@ -24,6 +26,7 @@ public class VoiceManager : MonoBehaviour {
 		//controllers = GetComponent<ControllerManager> ();
         Debug.Log(name + controllers == null);
 		hand = controllers.right;
+		timekeeper = GameObject.FindGameObjectWithTag("GameController").GetComponent<TimeManager>();
 	}
 
 	public void Update() {
@@ -81,18 +84,28 @@ public class VoiceManager : MonoBehaviour {
 
     public void ResetCannonballs()
     {
-        //Debug.Log("Reset Cannon Balls called");
-        var cannonBalls = FindObjectsOfType<Ball>();
-        foreach (var cannonBall in cannonBalls)
-        {
-            cannonBall.SelfDestroy(0);
-        }
-
-        var ballSpawners = FindObjectsOfType<BallSpawner>();
-        foreach (var ballSpawner in ballSpawners)
-        {
-            ballSpawner.SpawnBall();
-        }
+		RemoveCannonballs ();
+		RespawnCannonballs ();
     }
+
+	public void RemoveCannonballs() {
+		var cannonBalls = FindObjectsOfType<Ball>();
+		foreach (var cannonBall in cannonBalls)
+		{
+			cannonBall.SelfDestroy(0);
+		}
+	}
+
+	public void RespawnCannonballs() {
+		var ballSpawners = FindObjectsOfType<BallSpawner>();
+		foreach (var ballSpawner in ballSpawners)
+		{
+			ballSpawner.SpawnBall();
+		}
+	}
+
+	public void StartGame() {
+		timekeeper.StartGame ();
+	}
 
 }

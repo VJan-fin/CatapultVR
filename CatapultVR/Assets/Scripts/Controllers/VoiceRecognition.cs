@@ -28,11 +28,28 @@ public class VoiceRecognition : MonoBehaviour {
 
     void FillKeywords () {
         this.keywordActions.Add("Fire", "PrepareFire");
+		this.keywordActions.Add("Fire Catapult", "PrepareFire");
+		this.keywordActions.Add("Go nuts on that castle", "PrepareFire");
+
         this.keywordActions.Add("Ready Catapult", "ReadyCatapult");
+		this.keywordActions.Add("Prepare Catapult", "ReadyCatapult");
+		this.keywordActions.Add("Steady", "ReadyCatapult");
+
+		this.keywordActions.Add("Explode", "ExplodeCannonBall");
+		this.keywordActions.Add("Kaboum", "ExplodeCannonBall");
+		this.keywordActions.Add("Boum Boum", "ExplodeCannonBall");
+
+		this.keywordActions.Add ("Start Game", "StartGame");
+		this.keywordActions.Add ("Go let's go", "StartGame");
+		this.keywordActions.Add ("Vamos", "StartGame");
+		this.keywordActions.Add ("Yalla Habibi", "StartGame");
+
+		this.keywordActions.Add("Reset cannonballs", "ResetCannonballs");
+		this.keywordActions.Add("Give me my balls back", "ResetCannonballs");
+		this.keywordActions.Add("Bring back the balls", "ResetCannonballs");
+
         this.keywordActions.Add("Grow Catapult", "GrowCatapult");
         this.keywordActions.Add("Shrink Catapult", "ShrinkCatapult");
-        this.keywordActions.Add("Explode", "ExplodeCannonBall");
-        this.keywordActions.Add("Reset cannonballs", "ResetCannonballs");
 	}
 
 	void ReadyCatapult() {
@@ -60,4 +77,8 @@ public class VoiceRecognition : MonoBehaviour {
     {
         player.ResetCannonballs();
     }
+
+	public void StartGame() {
+		player.StartGame ();
+	}
 }
