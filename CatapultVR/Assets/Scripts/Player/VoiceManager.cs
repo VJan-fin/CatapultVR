@@ -14,10 +14,11 @@ public class VoiceManager : MonoBehaviour {
 	Hand hand;
 	Vector3 handPosition;
 
-	TimeManager timekeeper;
+	public TimeManager timekeeper;
 
 
-	public void Start() {
+
+    public void Start() {
 		catapult = GameObject.FindGameObjectWithTag ("Catapult").GetComponent<SpoonController> ();
 		catapultSize = GameObject.FindGameObjectWithTag ("Catapult").GetComponent<SizeController> ();
 		waitingForFire = false;
@@ -26,11 +27,10 @@ public class VoiceManager : MonoBehaviour {
 		//controllers = GetComponent<ControllerManager> ();
         Debug.Log(name + controllers == null);
 		hand = controllers.right;
-		timekeeper = GameObject.FindGameObjectWithTag("GameController").GetComponent<TimeManager>();
 	}
 
 	public void Update() {
-		if (waitingForFire) {
+        if (waitingForFire) {
 			HandleFire ();
 		}
 	}

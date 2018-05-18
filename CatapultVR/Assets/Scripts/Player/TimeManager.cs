@@ -46,8 +46,9 @@ public class TimeManager : MonoBehaviour {
 
 	private void RenderTimeLeft() {
 		string minutes = ((int)timeLeft / 60).ToString ();
-		string format = (timeLeft >= 60.0f) ? "f0" : "f1";
-		string seconds = (timeLeft % 60).ToString (format);
+		//string format = (timeLeft >= 60.0f) ? "f0" : "f1";
+		string seconds = (timeLeft % 60).ToString ("f0");
+        if(seconds.Length == 1) { seconds = "0" + seconds; }
 
 		timerMesh.text = minutes + ":" + seconds;
 	}
@@ -56,9 +57,10 @@ public class TimeManager : MonoBehaviour {
 		if (timeLeft < 0) {
 			running = false;
 			timerMesh.text = "Game Over";
+            timerMesh.transform.position += transform.up;
             gameOverSoundEffect.Play();
 			voiceManager.RemoveCannonballs ();
-			Invoke ("RestartLevel", 3.0f);
+			Invoke ("RestartLevel", 5.0f);
 		}
 	}
 

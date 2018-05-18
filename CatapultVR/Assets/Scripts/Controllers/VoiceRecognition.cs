@@ -30,6 +30,7 @@ public class VoiceRecognition : MonoBehaviour {
         this.keywordActions.Add("Fire", "PrepareFire");
 		this.keywordActions.Add("Fire Catapult", "PrepareFire");
 		this.keywordActions.Add("Go nuts on that castle", "PrepareFire");
+        this.keywordActions.Add("Make it rain fire", "PrepareFire");
 
         this.keywordActions.Add("Ready Catapult", "ReadyCatapult");
 		this.keywordActions.Add("Prepare Catapult", "ReadyCatapult");
@@ -40,7 +41,8 @@ public class VoiceRecognition : MonoBehaviour {
 		this.keywordActions.Add("Boum Boum", "ExplodeCannonBall");
 
 		this.keywordActions.Add ("Start Game", "StartGame");
-		this.keywordActions.Add ("Go let's go", "StartGame");
+        this.keywordActions.Add("Restart Game", "StartGame");
+        this.keywordActions.Add ("Go let's go", "StartGame");
 		this.keywordActions.Add ("Vamos", "StartGame");
 		this.keywordActions.Add ("Yalla Habibi", "StartGame");
 

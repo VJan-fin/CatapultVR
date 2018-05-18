@@ -30,7 +30,6 @@ public class BallHolder : MonoBehaviour {
         {
             return;
         }
-        Debug.Log(name + "holding ball");
         this.held = ball;
         var joint = AddFixedJoint();
         joint.connectedBody = ball.GetComponent<Rigidbody>();
@@ -38,25 +37,18 @@ public class BallHolder : MonoBehaviour {
 
 	public void DropBall()
 	{
-        Debug.Log(name + "being asked to drop ball");
 		if (!this.held) 
 		{
-            Debug.Log(name + "wasnt holding anything");
 			return;	
 		}
 		FixedJoint[] fxs = GetComponents<FixedJoint> ();
         if (fxs != null)
         {
-            Debug.Log(name + "fxs isnt null");
             foreach (FixedJoint fx in fxs)
             {
                 fx.connectedBody = null;
                 Destroy(fx);
             }
-        }
-        else
-        {
-            Debug.Log(name + "fxs is null");
         }
 		held = null;
 	}

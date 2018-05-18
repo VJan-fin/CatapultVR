@@ -18,7 +18,7 @@ public class Destructible : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        scoreManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManager>();
+        scoreManager = GameObject.FindGameObjectWithTag("Controller").GetComponent<ScoreManager>();
 	}
 
     public void PerformDestructionAction() 
