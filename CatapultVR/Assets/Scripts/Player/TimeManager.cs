@@ -7,6 +7,7 @@ public class TimeManager : MonoBehaviour {
 
 	public int MaxMinutes = 5;
 	public TextMesh timerMesh;
+    public AudioSource gameOverSoundEffect;
 
 	private bool running;
 	private float timeLeft; // in seconds
@@ -54,6 +55,7 @@ public class TimeManager : MonoBehaviour {
 		if (timeLeft < 0) {
 			running = false;
 			timerMesh.text = "Game Over";
+            gameOverSoundEffect.Play();
 			voiceManager.RemoveCannonballs ();
 			Invoke ("RestartLevel", 3.0f);
 		}
