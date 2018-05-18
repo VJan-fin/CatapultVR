@@ -8,7 +8,7 @@ public class BallSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        SpawnBall();
+        //SpawnBall();
 	}
 	
     public void SpawnBall()

@@ -35,6 +35,7 @@ public class TimeManager : MonoBehaviour {
 		Debug.Log ("start game");
 		running = true;
 		startTime = Time.time;
+        voiceManager.RespawnCannonballs();
 	}
 
 	private float GetNewTimeLeft() {
