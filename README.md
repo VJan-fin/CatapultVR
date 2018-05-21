@@ -1,55 +1,36 @@
-# Proposal: Angry Birds/Catapult VR
+# Catapult VR
 
-## 1. Project description
+Developed at EPFL by Viktor Janevski and Leonardo Aoun.
 
-The basic idea of our game is inspired by the popular Angry Birds. The player would be given a
-slingshot/catapult and their objective would be to destroy the towers located opposite of them by
-shooting projectiles. The intention is to use naturalistic ways of operating the slingshot, which
-means that the user should use their hands to choose the direction of fire and use the band
-extension of the slingshot in order to give power to the projectile.
+## 1. Story
 
-&nbsp;&nbsp;&nbsp;&nbsp;*a) A virtual 3D scene*
+Set in medieval times, the player finds themselves amidst a Viking village. At the beginning of the game, the user is presented with a wooden catapult, two barrels and a wheel. Across them, in the nearby proximity of the village, is an intimidatingly large stone fortress that safeguards the treasures, weapons and shields taken from the villagers as tax by the oppressors. The challenge is to breach as many of the stronghold's walls as possible, as fast as possible.
 
-The game will contain a 3D virtual environment resembling the real world that the user can
-explore and interact with.
+CatapultVR is a timed game. Every session lasts for five minutes and the objective within this limited time is to achieve a score which is as high as possible by crashing the fortress' walls using the catapult. The gameplay requires the user to physically move within a small and limited space around them, use their arms and hands to interact with some objects in the virtual environment and use speech to issue particular predefined voice commands recognised by the game.
 
-&nbsp;&nbsp;&nbsp;&nbsp;*b) Head position and rotation tracking*
+When the time of a single game expires, this is announced with audio inside the game, the cannonballs disappear and the score freezes. After five seconds the game will return to its initial position, waiting for the user to trigger the start of a new game by saying out loud a pre-specified keyword.
 
-This is necessary in order to give the players a better shot and a way to aim at the target they
-are firing projectiles at. The user should be able to move around: forward or backward to extend
-the band on the slingshot, sideways or duck in order to get a different perspective and better
-aim of the target.
+## 2. Hardware requirements
 
-&nbsp;&nbsp;&nbsp;&nbsp;*c) Control the 3D movement of at least one virtual 3D object*
+The bare minimum needed to be able to enjoy the game is an HTC Vive system consisting of a headset (HMD), two controllers and two base stations. A pair of headphones or an alternative audio output is also recommended in order to increase the enjoyment and flow of playing the game, even though it is not absolutely indispensable to have one.
 
-Some of the interactions that will be implemented include holding the ball/projectile and put it in
-the designated place in the catapult before firing, grabbing the band and pulling it back, aiming
-by either rotating a crank, or grabbing the band and moving sideways. We could also let the
-user detonate the bomb or activate some power while it is mid air by using voice commands.
+## 3. Spatial requirements
 
-&nbsp;&nbsp;&nbsp;&nbsp;*d) Physics and interactions*
+Assuming the HTC Vive system has been properly calibrated, a rectangular area of approximately 3.5m x 1.5m is sufficient to be able to interact with all the objects. They are carefully positioned near the user and do not require a lot of physical displacement.
 
-To make the virtual environment and the gameplay itself realistic, we would need to take
-advantage of a physics library, so that the projectile moves properly through the air (having
-real-world forces such as gravity or friction influence its trajectory), but also manage the
-collisions once the projectiles hit the intended targets.
+## 4. Software and credits
 
-## 2. Hardware
+The entire game was developed using Unity 2017.3.1 and Blender version 2.79b for making animations, tweaking some models and achieving the effect of breaking the fortress elements. There was no modeling done for the purpose of the game. All the sound effects, models, materials, textures and assets are available for free online. The great majority of them can be found for free in the Unity Asset Store.
 
-We can see two ways of the game being played:
+The most prominent asset packages used in the CatapultVR game include:
+- **Viking Village** by *Unity Technologies*: used for building the village surrounding the player 
+- **Unity Particle Pack** by *Unity Technologies*: special effects, fire and explosions
+- **Realistic Terrain Collection LITE** by *400M Creations*: used for creating the terrain, the surrounding mountains and the nature
+- **Medieval Castle Pack Lite** by *Tsunoa Games*: used for building the fortress
+- **Classic Skybox** by *MGSVEVO*: used for the sky
+- **Volumetric Lines** by *Johannes Unterguggenberger*: used for the particle system that creates the mist and the clouds in the scene
+- **Medieval Gold** and **2 Old Boxes** by *Mister Necturus*: used for the props, gold coins and weapons inside the fortress
 
-&nbsp;&nbsp;&nbsp;&nbsp;a) The preferred hardware is an HTC Vive set, with an HMD and controllers for the
-interactions, selections and manipulations of 3D objects. A simple alternative to this
-would be an Oculus Rift.
+Furthermore, SteamVR SDK for Unity, available in the Unity Asset Store, is used to integrate the HTC Vive system into the application. The version of the plugin used is 1.2.3. In order to implement animations, in particular the fade out effect of broken down fortress elements, the iTween library by Pixelplacement was used.
 
-&nbsp;&nbsp;&nbsp;&nbsp;b) With a Kinect that will allow for body and head tracking, but also to capture gestures for
-object interactions and voice commands, and we can change the view on the screen
-similar to what is done in the TP.
-
-## 3. Software
-
-Our intention is to use Unity 3D and some proprietary or open-source software depending on
-the hardware.
-
-## 4. Credits
-- Use the hands from [3DHaupt](https://www.blendswap.com/blends/view/66039) and [Super Dasil](https://www.blendswap.com/blends/view/81285)
+All the physics requirements were satisfied by using the built-in Unity physics engine.
