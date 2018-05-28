@@ -34,3 +34,9 @@ The most prominent asset packages used in the CatapultVR game include:
 Furthermore, SteamVR SDK for Unity, available in the Unity Asset Store, is used to integrate the HTC Vive system into the application. The version of the plugin used is 1.2.3. In order to implement animations, in particular the fade out effect of broken down fortress elements, the iTween library by Pixelplacement was used.
 
 All the physics requirements were satisfied by using the built-in Unity physics engine.
+
+## 5. Short video demo
+
+Click on the video thumbnail to follow the link to YouTube.
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/exYYukBjsQE/0.jpg)](https://www.youtube.com/watch?v=exYYukBjsQE)
